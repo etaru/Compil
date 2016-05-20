@@ -50,6 +50,10 @@ class UPPVar extends UPPExpr {
         this.name = name;
     }//UPPVar
 
+    public String toString() {
+        return name.toString() ;
+    }//toString
+
 }//UPPVar
 
 class UPPGVar extends UPPExpr {
@@ -418,7 +422,7 @@ class UPPFun extends UPPDef {
     }//UPPFun
 
     public String toString() {
-        return name.toString() + "(" + args.toString() + ") return" + ret.toString() + "var " + locals.toString() + " " + code.toString() ;
+        return name.toString() + "(" + args.toString() + ") var " + locals.toString() + " " + code.toString() ;
     }//toString
 
 }//UPPFun
@@ -457,6 +461,6 @@ class UPPProg {
 
     public String toString() {
         return   "var " + globals.toString() + " " + defs.toString() + " " + code.toString() ;
-    };//toString*/
+    }//toString
 
 }//UPPProg
