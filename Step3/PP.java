@@ -37,7 +37,7 @@ class Array extends Type {
     }//Array
     
     public String toString() {
-        return "array of : " + type.toString() ;
+        return "array of : " + elements.toString() ;
     }//toString
 
 }//Array
@@ -305,7 +305,7 @@ class PPLeq extends PPBinOp {
     UPPExpr toUPP(ArrayList<String> locals) {
         UPPExpr ne1 = e1.toUPP(locals) ;
         UPPExpr ne2 = e2.toUPP(locals) ;
-        return new UPPLeq(ne1, ne2) ;
+        return new UPPLt(ne1, ne2) ;
     }//toUPP
 
     public String toString() {
@@ -343,7 +343,7 @@ class PPNeq extends PPBinOp {
     UPPExpr toUPP(ArrayList<String> locals) {
         UPPExpr ne1 = e1.toUPP(locals) ;
         UPPExpr ne2 = e2.toUPP(locals) ;
-        return new UPPNeq(ne1, ne2) ;
+        return new UPPNe(ne1, ne2) ;
     }//toUPP
 
     public String toString() {
@@ -362,7 +362,7 @@ class PPGeq extends PPBinOp {
     UPPExpr toUPP(ArrayList<String> locals) {
         UPPExpr ne1 = e1.toUPP(locals) ;
         UPPExpr ne2 = e2.toUPP(locals) ;
-        return new UPPGeq(ne1, ne2) ;
+        return new UPPGe(ne1, ne2) ;
     }//toUPP
 
     public String toString() {
