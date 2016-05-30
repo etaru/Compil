@@ -79,9 +79,10 @@ class UPPVar extends UPPExpr {
     }//toRTL
 
     PRegister getPRegister (ArrayList<Pair<String,PRegister>> locals) {
-        for (Pair<String,PRegister> e : locals)
+        for (Pair<String,PRegister> e : locals) {
             if (e.left.equals(name))
                 return e.right;
+        }
         throw new RuntimeException();
     }//getPRegister
 
@@ -422,6 +423,8 @@ class Alloc extends Callee {
     public String toString() {
         return "alloc";
     }//Alloc
+
+}
 
 class UPPFunCall extends UPPExpr {
 
