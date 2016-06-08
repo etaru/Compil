@@ -1,50 +1,35 @@
-package Graphe;
+package Graph;
 
-/**
- *
- * @author yassine
- */
 public class Sommet {
-    private int numero;
-    private int couleur;
-    public void setNumero(int numero){
-        this.numero=numero;
+    int numero;
+    int couleur;
+    
+    //constructeur
+    public Sommet(int num,int coul){
+        this.numero(num);
+        this.numero(coul);
     }
-    public void setCouleur(int couleur){
-        this.couleur=couleur;
-    }
+    
+    /*getter pour numero et couleur*/
     public int getNumero(){
         return this.numero;
     }
     public int getCouleur(){
         return this.couleur;
     }
-    public Sommet(int numero,int couleur){
-        this.setNumero(numero);
-        this.setCouleur(couleur);
+    /*setter pour numero et couleur*/
+    public void setNumero(int numero){
+        this.numero=numero;
     }
-    @Override
-    public int hashCode(){
-        return 41+7*this.numero;
+    public void setCouleur(int couleur){
+        this.couleur=couleur;
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Sommet other = (Sommet) obj;
-        return this.numero == other.numero;
-    }
-    @Override
+    //toString pour afficher le resultat
     public String toString(){
-        String tmp="------------\n";
-        tmp+="Numéro: "+this.numero+"\n";
-        tmp+="Coleure: " +this.couleur+"\n";
-        return tmp;
+        String affiche;
+        affiche+="Sommet num: "+this.numero+"\n";
+        affiche+="Sommet coul: " +this.couleur+"\n";
+        return affiche;
     }
 
 }
